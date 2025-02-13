@@ -1,2 +1,3 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+-- load NVChad UI
+
 require("config.lazy")
