@@ -4,13 +4,18 @@
 --
 local g = vim.g
 
+-- NOTE: This is for lazyvim config
 g.minipairs_disable = true
 g.snacks_animate = false
 
 --Vim Doge
 g.doge_doc_standard_python = "reST"
+
+-- NOTE: This is vim options
 vim.opt.pumblend = 0
 vim.opt.winblend = 0
+
+vim.opt_local.formatoptions:remove({ "r", "o", "c" }) -- Stop neovim from adding comments to new line
 
 -- NOTE: Configs after this are for NeoVide only
 
@@ -18,7 +23,7 @@ g.gui_font_default_size = 12
 g.gui_font_size = vim.g.gui_font_default_size
 g.gui_font_face = "JetBrainsMono NF"
 
-g.neovide_cursor_animation_length = 0.03
+g.neovide_cursor_animation_length = 0.02
 
 g.neovide_text_gamma = 1.4
 g.neovide_text_contrast = 0.3
