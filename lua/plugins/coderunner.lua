@@ -1,5 +1,6 @@
 return {
   "dchae/canter.nvim",
+  enabled = false,
   opts = {
     runners = {
       ["py"] = "python",
