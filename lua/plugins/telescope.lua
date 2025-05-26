@@ -8,6 +8,7 @@ return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     event = "VeryLazy",
+    -- enabled = false,
     keys = {
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "[S]earch [H]elp" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "[S]earch [K]eymaps" },
