@@ -26,7 +26,7 @@ return {
         javascript = { "prettier" },
         typescript = { "prettier" },
         htmldjango = { "djlint" },
-        python = { "black" },
+        -- python = { "ruff" },
         bash = { "shfmt" },
         nix = { "nixfmt" },
       },
