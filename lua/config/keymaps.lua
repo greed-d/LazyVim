@@ -4,10 +4,9 @@
 local del = vim.keymap.del
 local map = vim.keymap.set
 
--- del("n", "<leader>ff")
--- del("n", "<leader>ft")
+del("n", "<leader>ff")
+del("n", "<leader>ft")
 -- del("n", "<leader>fm")
-del("n", "<leader>gg")
 del("n", "<leader>gg")
 del("n", "<leader>gG")
 del("n", "<leader>L")
@@ -34,11 +33,11 @@ map("n", "<CR>", "o<Esc>", { desc = "Add new line below" })
 map("n", "<S-CR>", "O<Esc>", { desc = "Add new line below" })
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
--- map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
--- map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
--- map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
--- map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
--- map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Terminal Stuff
 map("n", "<M-I>", function()
