@@ -24,6 +24,7 @@ map("n", "-", "<cmd>Oil<CR>", { desc = "Toggle [O]il" })
 -- map({ "n", "v", "x" }, "<S-l>", "$", { desc = "Move to end of line" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
+map("n", "<leader>wf", "<cmd>w<CR>", { desc = "file save" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll half page down and center screen" })
 
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
