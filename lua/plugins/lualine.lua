@@ -3,6 +3,7 @@ return {
   dependencies = {
     "DaikyXendo/nvim-material-icon",
     "greed-d/lualine-so-fancy.nvim",
+    "arkav/lualine-lsp-progress",
   },
 
   event = "VeryLazy",
@@ -216,6 +217,15 @@ return {
     })
 
     ins_left({
+
+      function()
+        return arrow_statusline.text_for_statusline_with_icons() -- Same, but with an bow and arrow icon ;D
+      end,
+      color = { fg = colors.aqua }, -- Sets highlighting of component
+      -- padding = { left = 0, right = 1 }, -- We don't need space before this
+    })
+
+    ins_left({
       "branch",
       icon = "",
       color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
@@ -241,26 +251,38 @@ return {
       end,
     })
 
-    -- ins_left({
-    --   -- Lsp server name .
-    --   function()
-    --     local msg = "No Active Lsp"
-    --     local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-    --     local clients = vim.lsp.get_clients()
-    --     if next(clients) == nil then
-    --       return msg
-    --     end
-    --     for _, client in ipairs(clients) do
-    --       local filetypes = client.config.filetypes
-    --       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-    --         return client.name
-    --       end
-    --     end
-    --     return msg
-    --   end,
-    --   icon = "󰣖 LSP ~",
-    --   color = { fg = "#ffffff", gui = "bold" },
-    -- })
+    ins_left({
+      "lsp_progress",
+      -- display_components = { "lsp_client_name", { "title", "percentage", "message" } },
+      -- With spinner
+      -- display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
+      colors = {
+        percentage = colors.cyan,
+        title = colors.cyan,
+        message = colors.cyan,
+        spinner = colors.cyan,
+        lsp_client_name = colors.magenta,
+        use = true,
+      },
+      separators = {
+        component = " ",
+        progress = " | ",
+        message = { pre = "(", post = ")" },
+        percentage = { pre = "", post = "%% " },
+        title = { pre = "", post = ": " },
+        lsp_client_name = { pre = "[", post = "]" },
+        spinner = { pre = "", post = "" },
+        message = { commenced = "In Progress", completed = "Completed" },
+      },
+      display_components = { "lsp_client_name", "spinner", { "title", "percentage", "message" } },
+      timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
+      spinner_symbols = { "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 " },
+    })
+    ins_right({
+      function()
+        return "%="
+      end,
+    })
     ins_right({
       "diagnostics",
       sources = { "nvim_diagnostic" },
@@ -296,14 +318,6 @@ return {
 
     ins_right({ "fancy_macro" })
 
-    ins_right({
-
-      function()
-        return arrow_statusline.text_for_statusline_with_icons() -- Same, but with an bow and arrow icon ;D
-      end,
-      color = { fg = colors.aqua }, -- Sets highlighting of component
-      -- padding = { left = 0, right = 1 }, -- We don't need space before this
-    })
     -- ins_right({ "fancy_location" })
     ins_right({
       function()
