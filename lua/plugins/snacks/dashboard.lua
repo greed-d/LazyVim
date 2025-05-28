@@ -39,12 +39,11 @@ return {
   sections = {
     { section = "header" },
     {
-
       pane = 2,
       section = "terminal",
       -- See:
       -- [Derek Taylor / Shell Color Scripts · GitLab](https://gitlab.com/dwt1/shell-color-scripts)
-      cmd = "echo hello",
+      cmd = "colorscript -e square",
 
       height = 5,
       padding = 0,
