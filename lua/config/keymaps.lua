@@ -7,7 +7,7 @@ local map = vim.keymap.set
 del("n", "<leader>ff")
 del("n", "<leader>ft")
 -- del("n", "<leader>fm")
-del("n", "<leader>gg")
+-- del("n", "<leader>gg")
 del("n", "<leader>gG")
 del("n", "<leader>L")
 del("n", "<leader>gl")

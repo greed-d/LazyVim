@@ -62,6 +62,7 @@ return {
     function()
       Snacks.picker.notifications()
     end,
+
     desc = "Notification History",
   },
   {
@@ -74,19 +75,19 @@ return {
 
   -- NOTE: [[ File explorer ]]
   -- FIXME: Some refinement needed
-  {
-    "\\",
-    function()
-      if Snacks.picker.get({ source = "explorer" })[1] == nil then
-        Snacks.picker.explorer()
-      elseif Snacks.picker.get({ source = "explorer" })[1]:is_focused() == true then
-        Snacks.picker.explorer()
-      elseif Snacks.picker.get({ source = "explorer" })[1]:is_focused() == false then
-        Snacks.picker.get({ source = "explorer" })[1]:focus()
-      end
-    end,
-    desc = "File Explorer",
-  },
+  -- {
+  --   "\\",
+  --   function()
+  --     if Snacks.picker.get({ source = "explorer" })[1] == nil then
+  --       Snacks.picker.explorer()
+  --     elseif Snacks.picker.get({ source = "explorer" })[1]:is_focused() == true then
+  --       Snacks.picker.explorer()
+  --     elseif Snacks.picker.get({ source = "explorer" })[1]:is_focused() == false then
+  --       Snacks.picker.get({ source = "explorer" })[1]:focus()
+  --     end
+  --   end,
+  --   desc = "File Explorer",
+  -- },
 
   -- NOTE: [[ Terminal ]]
   {
