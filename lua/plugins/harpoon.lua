@@ -12,57 +12,31 @@ return {
   keys = function()
     local keys = {
       {
-        "mf",
+        "<leader>ml",
         function()
           require("harpoon"):list():add()
         end,
         desc = "Harpoon File",
       },
       {
-        "ml",
+        "<leader>ma",
         function()
           local harpoon = require("harpoon")
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
         desc = "Harpoon Quick Menu",
       },
-      {
-        "<C-h>",
-        function()
-          require("harpoon"):list():select(1)
-        end,
-      },
-      {
-        "<C-j>",
-        function()
-          require("harpoon"):list():select(2)
-        end,
-      },
-      {
-        "<C-k>",
-        function()
-          require("harpoon"):list():select(3)
-        end,
-      },
-      {
-        "<C-l>",
-        function()
-          require("harpoon"):list():select(4)
-        end,
-      },
-      {
-        "<C-m>",
-        function()
-          require("harpoon"):list():select(5)
-        end,
-      },
-      {
-        "<C-p>",
-        function()
-          require("harpoon"):list():select(6)
-        end,
-      },
     }
+
+    for i = 1, 9 do
+      table.insert(keys, {
+        "g" .. i,
+        function()
+          require("harpoon"):list():select(i)
+        end,
+        desc = "Harpoon to File " .. i,
+      })
+    end
     return keys
   end,
 }
