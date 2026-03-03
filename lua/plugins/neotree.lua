@@ -4,6 +4,7 @@ return {
     dependencies = {
       "DaikyXendo/nvim-material-icon",
     },
+    enabled = true,
     keys = {
       {
         "\\",
