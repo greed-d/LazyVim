@@ -10,6 +10,9 @@ return {
         emmet_ls = {},
         ruff = {},
         ty = {},
+        basedpyright = {
+          enabled = false,
+        },
       },
       diagnostics = {
         float = {
