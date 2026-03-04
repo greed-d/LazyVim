@@ -9,13 +9,7 @@ return {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         emmet_ls = {},
         ruff = {},
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              typeCheckingMode = "standard",
-            },
-          },
-        },
+        ty = {},
       },
       diagnostics = {
         float = {
