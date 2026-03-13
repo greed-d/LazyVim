@@ -7,6 +7,16 @@ return {
   },
 
   event = "VeryLazy",
+  opts = {
+    winbar = {
+      lualine_c = {
+        {
+          "navic",
+          color_correction = "dynamic",
+        },
+      },
+    },
+  },
   config = function()
     -- Eviline config for lualine
     -- Author: shadmansaleh

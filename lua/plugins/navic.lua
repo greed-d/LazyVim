@@ -1,6 +1,6 @@
 return {
   "SmiteshP/nvim-navic",
-  lazy = true,
+  event = "LspAttach",
   enabled = true,
   init = function()
     vim.g.navic_silence = false
@@ -15,6 +15,9 @@ return {
       depth_limit = 5,
       icons = LazyVim.config.icons.kinds,
       lazy_update_context = true,
+      lsp = {
+        auto_attach = true,
+      },
     }
   end,
 }
